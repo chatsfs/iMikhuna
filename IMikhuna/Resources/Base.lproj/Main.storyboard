@@ -14,6 +14,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="IMikhuna" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -53,7 +54,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="LOG IN"/>
                                 <connections>
-                                    <segue destination="1ll-tj-xsx" kind="show" id="BM3-KX-0iS"/>
+                                    <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahg-Tb-Gz5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUm-Mt-t43">
@@ -75,9 +76,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxP-V3-mvW">
                                 <rect key="frame" x="286" y="325" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
-                                <connections>
-                                    <segue destination="aDg-Ow-0bc" kind="show" id="Bc6-uA-aKl"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xd-h4-ydG">
                                 <rect key="frame" x="182" y="390" width="16" height="21"/>
@@ -136,8 +134,13 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="sSG-vp-tIU" id="7gP-Ha-Ndd"/>
+                        <outlet property="passwordTextField" destination="TMy-38-5YQ" id="yYT-0f-cqW"/>
+                        <segue destination="1ll-tj-xsx" kind="show" identifier="showMain" id="PbR-rK-Hwh"/>
+                        <segue destination="aDg-Ow-0bc" kind="show" identifier="showRegister" id="YLY-1e-Ao6"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-170" y="-606"/>
         </scene>
@@ -237,9 +240,6 @@
                                 <rect key="frame" x="149" y="458" width="77" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="CONITNUE"/>
-                                <connections>
-                                    <segue destination="1ll-tj-xsx" kind="show" id="A6p-3j-lru"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fAq-zs-Qqh">
                                 <rect key="frame" x="16" y="393" width="343" height="30"/>
@@ -260,6 +260,9 @@
                         <viewLayoutGuide key="safeArea" id="yLJ-f3-2fZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="REGISTER" id="FI4-sp-VPd"/>
+                    <connections>
+                        <segue destination="1ll-tj-xsx" kind="show" identifier="showMain" id="HSN-Pt-bIE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySv-AL-zEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -781,6 +784,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="a4A-an-SUZ"/>
-        <segue reference="A6p-3j-lru"/>
+        <segue reference="PbR-rK-Hwh"/>
     </inferredMetricsTieBreakers>
 </document>
