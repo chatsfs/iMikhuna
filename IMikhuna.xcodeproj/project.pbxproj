@@ -11,6 +11,11 @@
 		D534818420DA242000D33E30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D534818220DA242000D33E30 /* Main.storyboard */; };
 		D534818720DA242000D33E30 /* IMikhuna.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D534818520DA242000D33E30 /* IMikhuna.xcdatamodeld */; };
 		D534818C20DA242200D33E30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D534818A20DA242200D33E30 /* LaunchScreen.storyboard */; };
+		D53B70E220E4C09000C1E7C5 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B70E120E4C09000C1E7C5 /* Subscription.swift */; };
+		D53B70FD20E4CF7F00C1E7C5 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B70FC20E4CF7F00C1E7C5 /* Order.swift */; };
+		D53B70FF20E4D5C400C1E7C5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B70FE20E4D5C400C1E7C5 /* Menu.swift */; };
+		D53B710120E518E300C1E7C5 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B710020E518E300C1E7C5 /* Dish.swift */; };
+		D53B713C20E56D7500C1E7C5 /* HistoricalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B713B20E56D7500C1E7C5 /* HistoricalViewController.swift */; };
 		D5432BBB20E311500043CE52 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5432BA520E30E200043CE52 /* AlamofireImage.framework */; };
 		D5432BBC20E311500043CE52 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5432BA520E30E200043CE52 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5432BBF20E311570043CE52 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5432B8B20E30E000043CE52 /* SwiftyJSON.framework */; };
@@ -18,6 +23,8 @@
 		D5432BC320E3115D0043CE52 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5432B7220E30DF80043CE52 /* Alamofire.framework */; };
 		D5432BC420E3115D0043CE52 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5432B7220E30DF80043CE52 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5432BC820E312020043CE52 /* MikhunaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5432BC720E312020043CE52 /* MikhunaApi.swift */; };
+		D5432BCA20E344C50043CE52 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5432BC920E344C50043CE52 /* Session.swift */; };
+		D5432BCC20E345840043CE52 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5432BCB20E345840043CE52 /* SessionStore.swift */; };
 		D5464E8820E23D5C003C7ECA /* MakeOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5464E8720E23D5C003C7ECA /* MakeOrderViewController.swift */; };
 		D5464E8A20E244AD003C7ECA /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5464E8920E244AD003C7ECA /* OrdersTableViewController.swift */; };
 		D5464E8C20E244D8003C7ECA /* SubscriptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5464E8B20E244D8003C7ECA /* SubscriptionsTableViewController.swift */; };
@@ -223,10 +230,17 @@
 		D534818620DA242000D33E30 /* IMikhuna.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IMikhuna.xcdatamodel; sourceTree = "<group>"; };
 		D534818B20DA242200D33E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D534818D20DA242200D33E30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D53B70E120E4C09000C1E7C5 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		D53B70FC20E4CF7F00C1E7C5 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		D53B70FE20E4D5C400C1E7C5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		D53B710020E518E300C1E7C5 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		D53B713B20E56D7500C1E7C5 /* HistoricalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalViewController.swift; sourceTree = "<group>"; };
 		D5432B6620E30DF70043CE52 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../../Moviles/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		D5432B7F20E30E000043CE52 /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = ../../Moviles/SwiftyJSON/SwiftyJSON.xcodeproj; sourceTree = "<group>"; };
 		D5432B9820E30E200043CE52 /* AlamofireImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireImage.xcodeproj; path = "../../AlamofireImage-master/AlamofireImage.xcodeproj"; sourceTree = "<group>"; };
 		D5432BC720E312020043CE52 /* MikhunaApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikhunaApi.swift; sourceTree = SOURCE_ROOT; };
+		D5432BC920E344C50043CE52 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		D5432BCB20E345840043CE52 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		D5464E8720E23D5C003C7ECA /* MakeOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeOrderViewController.swift; sourceTree = "<group>"; };
 		D5464E8920E244AD003C7ECA /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		D5464E8B20E244D8003C7ECA /* SubscriptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsTableViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +302,12 @@
 			isa = PBXGroup;
 			children = (
 				D534818520DA242000D33E30 /* IMikhuna.xcdatamodeld */,
+				D5432BC920E344C50043CE52 /* Session.swift */,
+				D5432BCB20E345840043CE52 /* SessionStore.swift */,
+				D53B70E120E4C09000C1E7C5 /* Subscription.swift */,
+				D53B70FC20E4CF7F00C1E7C5 /* Order.swift */,
+				D53B70FE20E4D5C400C1E7C5 /* Menu.swift */,
+				D53B710020E518E300C1E7C5 /* Dish.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +333,7 @@
 				D5464E8920E244AD003C7ECA /* OrdersTableViewController.swift */,
 				D5464E8B20E244D8003C7ECA /* SubscriptionsTableViewController.swift */,
 				D5464E8F20E24723003C7ECA /* RestaurantViewController.swift */,
+				D53B713B20E56D7500C1E7C5 /* HistoricalViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -614,15 +635,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5432BCC20E345840043CE52 /* SessionStore.swift in Sources */,
+				D53B710120E518E300C1E7C5 /* Dish.swift in Sources */,
 				D5464E8A20E244AD003C7ECA /* OrdersTableViewController.swift in Sources */,
 				D5464E9020E24723003C7ECA /* RestaurantViewController.swift in Sources */,
 				D5602DDB20DB8CA9000305FE /* LoginViewController.swift in Sources */,
+				D53B70E220E4C09000C1E7C5 /* Subscription.swift in Sources */,
 				D5464E8820E23D5C003C7ECA /* MakeOrderViewController.swift in Sources */,
 				D54C082920E1733F00003890 /* RegisterViewController.swift in Sources */,
+				D53B713C20E56D7500C1E7C5 /* HistoricalViewController.swift in Sources */,
 				D534817F20DA242000D33E30 /* AppDelegate.swift in Sources */,
 				D5432BC820E312020043CE52 /* MikhunaApi.swift in Sources */,
 				D5464E8C20E244D8003C7ECA /* SubscriptionsTableViewController.swift in Sources */,
+				D53B70FF20E4D5C400C1E7C5 /* Menu.swift in Sources */,
+				D5432BCA20E344C50043CE52 /* Session.swift in Sources */,
 				D534818720DA242000D33E30 /* IMikhuna.xcdatamodeld in Sources */,
+				D53B70FD20E4CF7F00C1E7C5 /* Order.swift in Sources */,
 				D54C082520E172E300003890 /* OrderViewController.swift in Sources */,
 				D54C082720E172F800003890 /* MapViewController.swift in Sources */,
 			);

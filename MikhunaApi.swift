@@ -8,8 +8,14 @@
 
 import Foundation
 class MikhunaApi{
-    static let baseUrl = "http://mikhunaservices.us-east-2.elasticbeanstalk.com/"
+    static let baseUrl = "http://mikhunaservices.us-east-2.elasticbeanstalk.com/api"
     public static var logInUrl: String {
-        return "\(baseUrl)api/session"
+        return "\(baseUrl)/session"
+    }
+    public static var registerUrl: String {
+        return "\(baseUrl)/users"
+    }
+    func subscriptUrl(_ userId:String) -> String {
+        return "http://mikhunaservices.us-east-2.elasticbeanstalk.com/api/users/\(userId)/subscriptions"
     }
 }

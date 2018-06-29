@@ -1,83 +1,72 @@
 //
-//  SubscriptionsTableViewController.swift
+//  HistoricalViewController.swift
 //  IMikhuna
 //
-//  Created by Raul Bigoria Escobedo on 26/06/18.
+//  Created by Raul Bigoria Escobedo on 28/06/18.
 //  Copyright © 2018 Raul Bigoria Escobedo. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
+import Alamofire
 
 private let reuseIdentifier = "Cell"
 
-class HeadlineCell: UITableViewCell {
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var addressLabel: UILabel!
-    @IBOutlet var openHour: UILabel!
-    
-    
-    func updateView(from subscription: Subscription) {
-        nameLabel.text = subscription.name
-        addressLabel.text = subscription.address
-        openHour.text = subscription.openHour
-    }
-    
-}
-
-class SubscriptionsTableViewController: UITableViewController {
+class HistoricalViewController: UITableViewController {
     var userId : String = ""
     var token : String = ""
     var sessionStore = SessionStore()
-    var subscriptions : [Subscription] = []
-    var currentItemIndex: Int = 0
+    var orders : [Order] = []
+    var currentItemIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         userId = sessionStore.storeSession?.userId as! String
         token = sessionStore.storeSession?.token as! String
         updateData()
     }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return subscriptions.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! HeadlineCell
-
-        // Configure the cell...
-        cell.updateView(from: subscriptions[indexPath.row])
-        
-        return cell
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showRestaurant" {
-            let restaurantViewController = ( segue.destination as! UINavigationController).viewControllers.first as! RestaurantViewController
-            restaurantViewController.restaurant = subscriptions[currentItemIndex]
-        }
-    }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.currentItemIndex = indexPath.row
-        self.performSegue(withIdentifier: "showRestaurant", sender: self)
-    }
     @IBAction func signOutAction(_ sender: Any) {
         sessionStore.logout()
         self.dismiss(animated: true)
     }
     
-
+    
+    // MARK: - Table view data source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return orders.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! OrderCell
+        
+        // Configure the cell...
+        cell.updateView(from: orders[indexPath.row])
+        return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showOrderDetails" {
+            let restaurantViewController = ( segue.destination as! UINavigationController).viewControllers.first as! OrderViewController
+            restaurantViewController.order = orders[currentItemIndex]
+        }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.currentItemIndex = indexPath.row
+        self.performSegue(withIdentifier: "showOrderDetails", sender: self)
+    }
+    
     func updateData() {
         let headers: HTTPHeaders = [
             "token": token
         ]
-        Alamofire.request("http://mikhunaservices.us-east-2.elasticbeanstalk.com/api/users/\(userId)/subscriptions",
+        Alamofire.request("http://mikhunaservices.us-east-2.elasticbeanstalk.com/api/users/\(userId)/orders",
             headers: headers)
             .validate()
             .responseJSON(completionHandler: { response in
@@ -88,7 +77,8 @@ class SubscriptionsTableViewController: UITableViewController {
                         print("Response Error: \(json["message"].stringValue)")
                         return
                     }
-                    self.subscriptions = Subscription.buildAll(from: json["result"].arrayValue)
+                    print("salio")
+                    self.orders = Order.buildAll(from: json["result"].arrayValue)
                     self.tableView!.reloadData()
                     break
                 case .failure(let error):
